@@ -29,7 +29,7 @@ count=0
 echo "version=$orgSprint.$count" > $WORKSPACE/VersionsControl/verison.properties
 fi
 
-finalVersion=`cat verison.properties | cut -d '=' -f2`
+finalVersion=`cat $WORKSPACE/VersionsControl/verison.properties | cut -d '=' -f2`
 echo "finalVersion is: $finalVersion"
 cd $WORKSPACE/my-app/ 
 pom_version=`/usr/share/maven/bin/mvn help:evaluate -Dexpression=project.version | tail -8 | head -n 1`
