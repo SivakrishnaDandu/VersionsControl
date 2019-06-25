@@ -22,11 +22,11 @@ if [ $sprint1 -eq $oldVersion1 ] && [ $sprint2 -eq $oldVersion2 ]
 then
 echo "both the versions are matched..!"
 count=$((count+1))
-echo "version=$orgSprint.$count" > verison.properties 
+echo "version=$orgSprint.$count" > $WORKSPACE/VersionsControl/verison.properties 
 else
 echo "Versions are not matched..!"
 count=0
-echo "version=$orgSprint.$count" > verison.properties
+echo "version=$orgSprint.$count" > $WORKSPACE/VersionsControl/verison.properties
 fi
 
 finalVersion=`cat verison.properties | cut -d '=' -f2`
