@@ -31,10 +31,10 @@ fi
 
 finalVersion=`cat verison.properties | cut -d '=' -f2`
 echo "finalVersion is: $finalVersion"
-cd /opt/my-app/ 
+cd $WORKSPACE/my-app/ 
 pom_version=`/usr/share/maven/bin/mvn help:evaluate -Dexpression=project.version | tail -8 | head -n 1`
 echo "pom_version is: $pom_version"
-sed -i "s/<version>$pom_version<\/version>/<version>$finalVersion<\/version>/" /opt/my-app/pom.xml
+sed -i "s/<version>$pom_version<\/version>/<version>$finalVersion<\/version>/" $WORKSPACE/my-app/pom.xml
 if [ $? == 0 ]
 then
 echo "Executed Successfully ..!"
