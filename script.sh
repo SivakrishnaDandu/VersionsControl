@@ -1,5 +1,5 @@
 #!/bin/bash
-var WORKSPACE = $1
+WORKSPACE = $1
 orgSprint=`cat $WORKSPACE/VersionsControl/Sprint | awk -F '=' '{print $2}'`
 echo orgSprint value is: $orgSprint
 
