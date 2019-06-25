@@ -1,5 +1,6 @@
 #!/bin/bash
-orgSprint=`cat /opt/scripts/VersionsControl/Sprint | awk -F '=' '{print $2}'`
+var WORKSPACE = $1
+orgSprint=`cat $WORKSPACE/VersionsControl/Sprint | awk -F '=' '{print $2}'`
 echo orgSprint value is: $orgSprint
 
 sprint1=`echo $orgSprint | awk -F '.' '{print $1}'`
@@ -7,7 +8,7 @@ echo sprint1 is: $sprint1
 sprint2=`echo $orgSprint | awk -F '.' '{print $2}'`
 echo sprint2 is: $sprint2
 
-orgOldVersion=`cat /opt/scripts/VersionsControl/PreviousVersion | awk -F '=' '{print $2}'`
+orgOldVersion=`cat $WORKSPACE/VersionsControl/PreviousVersion | awk -F '=' '{print $2}'`
 echo orgOldVersion is: $orgOldVersion
 
 oldVersion1=`echo $orgOldVersion | awk -F '.' '{print $1}'`
